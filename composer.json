@@ -1,0 +1,55 @@
+{
+    "name": "Ar4min/paykon",
+    "description": "A simple stable Laravel package to handle popular payment gateways in Iran including ZarinPal and IDPay.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Armin Zahedi",
+            "email": "00001212aa@gmail.com",
+            "homepage": "https://ar4min.ir"
+        }
+    ],
+    "homepage": "https://github.com/Ar4min/paykon",
+    "keywords": [
+        "zarinpal", "زرین پال",
+        "idpay", "آیدی پی",
+        "laravel", "PayKon", "paykon",
+        "toman", "payment", "gateway", "درگاه", "پرداخت"
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.3|^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0|^9.0",
+        "mockery/mockery": "^1.3.3",
+        "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ar4min\\PayKon\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ar4min\\PayKon\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ar4min\\PayKon\\PayKonServiceProvider"
+            ],
+            "aliases": {
+                "Payment": "Ar4min\\PayKon\\Facades\\Payment"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --exclude-group external",
+        "test-coverage": "vendor/bin/phpunit --coverage-clover coverage.xml",
+        "test-dev": "vendor/bin/phpunit --coverage-html coverage --coverage-text"
+    }
+}
